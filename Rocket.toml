@@ -7,4 +7,4 @@ template_dir = "handlebar"
 port = 8008
 
 [release]
-secret_key = "/6ILdnJhe4SL9XKdwVGVw8iIAKaOi92nE6lj7Hm5ObU="
+secret_key = "wNDXemd5yxPr52JpS4ziD8c8ZMritLECjfLEogDBlW4="
