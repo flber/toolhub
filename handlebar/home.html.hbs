@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Toolhub</title>
+
+		<style>
+		
+			:root {
+				/* https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.333,3,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+				--step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+				--step-1: clamp(1.35rem, calc(1.24rem + 0.55vw), 1.67rem);
+				--step-2: clamp(1.62rem, calc(1.41rem + 1.05vw), 2.22rem);
+				--step-3: clamp(1.94rem, calc(1.59rem + 1.77vw), 2.96rem);
+
+				/* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,32,1.25,5,2,&s=,1.5|2,s-l&g=s,l,xl,12 */
+				--space-s: clamp(1.13rem, calc(0.82rem + 1.52vw), 2.00rem);
+				--space-m: clamp(1.69rem, calc(1.23rem + 2.28vw), 3.00rem);
+				--space-l: clamp(2.25rem, calc(1.64rem + 3.04vw), 4.00rem);
+
+				/* One-up pairs */
+				--space-s-m: clamp(1.13rem, calc(0.47rem + 3.26vw), 3.00rem);
+				--space-m-l: clamp(1.69rem, calc(0.88rem + 4.02vw), 4.00rem);
+
+				/* Custom pairs */
+				--space-s-l: clamp(1.13rem, calc(0.13rem + 5.00vw), 4.00rem);
+			}
+
+			body {
+				font-size:var(--step-0);
+				font-family:sans-serif;
+				margin: var(--space-s-l);
+				line-height:1.6;
+				color:var(--text);
+				background-color:var(--bg);
+			}
+			main > *+* {margin-top: var(--space-s);}
+
+			h1 { font-size: var(--step-3); margin: 0px; }
+			h2 { font-size: var(--step-2); margin: 0px; }
+			h3 { font-size: var(--step-1); margin: 0px; }
+
+			nav {
+				font-size: var(--step-2);
+				font-weight: bold;
+				margin-bottom: var(--space-l);
+			}
+
+			.nav-main ul {
+			  display: flex;
+			  justify-content: space-between;
+ 			}
+ 			
+			ul[role=list] {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			.box {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+				gap: var(--space-s);
+				grid-auto-flow: dense;
+			}
+
+			.card {
+			  display: flex;
+			  flex-direction: column;
+			  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.35);
+			  border-radius: 0.5rem;
+			  max-width: 300px;
+			}
+
+			.cards > img {
+			  aspect-ratio: 3/2;
+			  object-fit: cover;
+			  width: 100%;
+			}
+
+			.card > :not(img):first-child {
+			  margin-top: var(--space-s);
+			}
+
+			.card > :not(img) {
+			  margin-left: var(--space-s);
+			  margin-right: var(--space-s);
+			}
+	
+		</style>
+	</head>
+
+	
+	<body>
+		<header>
+			<nav class="nav-main" role="navigation">
+				<ul role="list">
+					<li>Toolhub</li>
+					<li><a href="/account">Account</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+
+			<div class="box">
+
+				<div class="card">
+					<h3>Test!</h3>
+					<p>This is a test card!</p>
+					<img loading="lazy" alt="placeholder image" src="https://placehold.co/600x400"/>
+				</div>
+				
+				<div class="card">
+					<h3>Another!</h3>
+					<p>This is a test card!</p>
+					<img loading="lazy" alt="placeholder image" src="https://placehold.co/600x400"/>
+				</div>
+				
+				<div class="card">
+					<h3>Another!</h3>
+					<p>This is a test card!</p>
+					<img loading="lazy" alt="placeholder image" src="https://placehold.co/600x400"/>
+				</div>
+				
+				<div class="card">
+					<h3>Another!</h3>
+					<p>This is a test card!</p>
+					<img loading="lazy" alt="placeholder image" src="https://placehold.co/600x400"/>
+				</div>
+				
+				<div class="card">
+					<h3>Another!</h3>
+					<p>This is a test card!</p>
+					<img loading="lazy" alt="placeholder image" src="https://placehold.co/600x400"/>
+				</div>
+				
+				<div class="card">
+					<h3>Another!</h3>
+					<p>This is a test card!</p>
+					<img loading="lazy" alt="placeholder image" src="https://placehold.co/600x400"/>
+				</div>
+				
+			</div>
+
+		</main>
+	</body>
+</html>
