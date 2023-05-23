@@ -12,7 +12,7 @@ mod home;
 // use api::count::{self, UserCount};
 
 #[launch]
-fn rocket() -> _ {
+fn rocket() -> _ {	
 	rocket::build()
 		// .manage(UserCount::default())
 		// .manage(UserIPs(vec![]))

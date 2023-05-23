@@ -22,7 +22,7 @@ pub fn encode(input: &str, output: &str) -> Result<()> {
 		.unwrap();
 	
 	let _img = ImageBuilder::default()
-		.fit_width(600)
+		.fit_width(780)
 		.to_file(&qrcode, output);
 
 	add_text(output, TEXT)?;
