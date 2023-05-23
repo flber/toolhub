@@ -1,6 +1,8 @@
-use image::{self, Luma};
+use image;
 use magick_rust::{magick_wand_genesis, DrawingWand, MagickWand};
-use qrcode::{EcLevel, QrCode, Version};
+
+use fast_qr::convert::image::ImageBuilder;
+use fast_qr::qr::QRBuilder;
 
 use std::fs::File;
 use std::io::{BufReader, Read, Result};
@@ -15,10 +17,13 @@ pub fn encode(input: &str, output: &str) -> Result<()> {
 	let mut buffer = Vec::new();
 	reader.read_to_end(&mut buffer)?;
 
-	let code = QrCode::with_version(buffer, Version::Normal(18), EcLevel::L).unwrap();
-	let image = code.render::<Luma<u8>>().build();
-
-	image.save(output).unwrap();
+	let qrcode = QRBuilder::new(buffer)
+		.build()
+		.unwrap();
+	
+	let _img = ImageBuilder::default()
+		.fit_width(600)
+		.to_file(&qrcode, output);
 
 	add_text(output, TEXT)?;
 

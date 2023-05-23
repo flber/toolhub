@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-qrcode = "0.11"
+fast_qr = { version = "0.9.0", features = ["image"] }
 image = "0.22"
 bardecoder = "0.2.2"
 magick_rust = "0.18.0"

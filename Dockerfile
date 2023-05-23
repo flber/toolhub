@@ -3,7 +3,7 @@ FROM rust:1.67 as builder
 
 WORKDIR /opt/toolhub
 
-RUN apt-get update && apt-get install -y libsqlite3-dev imagemagick
+RUN apt-get update && apt-get install -y libsqlite3-dev imagemagick clang
 
 COPY ["Cargo.toml", "Cargo.lock",  "./"]
 # Make empty fake project, just pulls dependencies
@@ -25,7 +25,7 @@ WORKDIR /opt/toolhub
 
 ENV TZ="America/Los_Angeles"
 
-RUN apt-get update && apt-get install -y libsqlite3-dev imagemagick
+RUN apt-get update && apt-get install -y libsqlite3-dev imagemagick clang
 
 COPY --from=builder /usr/local/cargo/bin/toolhub /usr/local/bin/toolhub
 
